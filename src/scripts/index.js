@@ -1,67 +1,40 @@
-/*let xhttp = new XMLHttpRequest();
 
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200){
-        console.log(this.responseText);
-    }
-};
-xhttp.open("GET", "http://5cb75dfda3763800149fd5fa.mockapi.io/api/v1/users", true);
-xhttp.send();
-*/
-
-/*
-import $ from 'jquery';
-
-let promise = $.get("http://5cb75dfda3763800149fd5fa.mockapi.io/api/v1/users");
-promise.then(
-    data => console.log('sucess: ', data),
-    error => console.log('error: ', error)
-);
-
-*/
-
-/*
-import $ from 'jquery';
-let user = {
-    name: 'Alejandro Macias',
-    avatar: 'mark.jpg'
-};
-
-let promise = $.post("http://5cb75dfda3763800149fd5fa.mockapi.io/api/v1/users"
-);
-
-promise.then(
-    data => console.log('sucess: ', data),
-    error => console.log('error: ', error)
-);
-
-*/
-
-
-let entry = '[{"name":"Luis","age":25},{"name":"Osuna","age":29},{"name":"Diego","age":17},{"name":"Tulio","age":31},{"name":"William","age":31}]';
-
-let persons = JSON.parse(entry);
-console.log(persons);
-
+var entry = '[{"name":"Luis","age":25},{"name":"Osuna","age":29},{"name":"Diego","age":17},{"name":"Tulio","age":31},{"name":"William","age":31}]';
+var persons = JSON.parse(entry);
+var less26 = '';
+var exactperson = '';
 function under26(){
-let less26 = persons.filter( 
+less26 = persons.filter( 
     persons => persons.age < 26
     );
-console.log(less26);
 }
 
 function diego(){
-    let X = persons.filter( 
-        persons => persons.name === "Diego"
-        );
-    console.log(X);
+exactperson = persons.filter( 
+    persons => persons.name === "Diego"
+    );
+}
+
+function printunder26(){
+    for (var j in less26) 
+     {
+      console.log(less26[j]);
+     }
+}
+
+function printexactperson(){
+    for (var j in less26) 
+    {
+     console.log(exactperson[j]);
     }
+}
 
 under26();
+printunder26();
+console.log("-------------------------");
 diego();
+printexactperson();
 
-
-// imprimir linea por linea. 
 
 
 
