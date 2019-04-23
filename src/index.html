@@ -1,13 +1,46 @@
+<style>
+    btn:hover {
+      background-color: yellow;
+    }
+</style>
 <div id="menu">
-    <button id = "button1" onclick="clickme()">Click</button>
-    <button id = "button2" >Click</button>
-    <button class="btn">Click</button>
+  <button id = "button1" onclick="clickme()">Click</button>
+  <button id = "button2" onclick="Visibility()">Click</button>
+  <button class="btn" onclick="document.getElementById('demo').style.fontSize='35px'">Click</button>
+  </div>
+  <div id="myDIV">
+  This is my DIV element.
+  </div>
+  <div id="NewMyDIV">
+    This is my New DIV element.
     </div>
-    <div id="myDIV">
-    This is my DIV element.
-    </div>
-    <script>
-        function clickme() {
-         document.getElementById("user-input").innerHTML = Stringg.value;
-       }
-       </script>
+  <p id="demo">Change the style of an HTML element.</p>
+  <script>
+    document.getElementById('NewMyDIV').style.display = 'none';
+    document.getElementById('NewMyDIV').style.width = '100px';
+    document.getElementById('NewMyDIV').style.padding = '50px 0';
+    document.getElementById('NewMyDIV').style.textAlign =  'center' ;
+    document.getElementById('NewMyDIV').style.backgroundColor = 'lightblue';
+    document.getElementById('NewMyDIV').style.marginTop = '20px';
+
+    function clickme() 
+    {
+    alert("You clicked button 1")
+    }
+    function Visibility() 
+    {
+      var x = document.getElementById('myDIV');
+      var y = document.getElementById('NewMyDIV');
+      if (x.style.display === 'none') 
+      {
+          x.style.display = 'block';
+          y.style.display = 'none';
+      } 
+      else {
+          x.style.display = 'none';
+          y.style.display = 'block';
+           }
+    }
+  </script>   
+
+  
